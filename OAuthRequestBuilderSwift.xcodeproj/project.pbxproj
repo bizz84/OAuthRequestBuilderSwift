@@ -18,6 +18,8 @@
 		6541D2641A77E48400841C46 /* OAuthSwiftCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541D25B1A77E48400841C46 /* OAuthSwiftCredential.swift */; };
 		6541D2651A77E48400841C46 /* OAuthSwiftHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541D25C1A77E48400841C46 /* OAuthSwiftHTTPRequest.swift */; };
 		6541D2671A77E4AC00841C46 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6541D2661A77E4AC00841C46 /* Security.framework */; };
+		654A74D21A77E8D300F0E6D2 /* OAuthRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A74D11A77E8D300F0E6D2 /* OAuthRequestBuilder.swift */; };
+		654A74D41A77E8E600F0E6D2 /* Semantics3Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A74D31A77E8E600F0E6D2 /* Semantics3Router.swift */; };
 		65BE1DA71A77D80500348E09 /* OAuthRequestBuilderSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BE1DA61A77D80500348E09 /* OAuthRequestBuilderSwiftTests.swift */; };
 		65BE1DB91A77D93A00348E09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BE1DB11A77D93A00348E09 /* AppDelegate.swift */; };
 		65BE1DBA1A77D93A00348E09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65BE1DB21A77D93A00348E09 /* LaunchScreen.xib */; };
@@ -52,6 +54,8 @@
 		6541D25C1A77E48400841C46 /* OAuthSwiftHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthSwiftHTTPRequest.swift; sourceTree = "<group>"; };
 		6541D2661A77E4AC00841C46 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6541D2681A77E52F00841C46 /* OAuthRequestBuilderSwift-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OAuthRequestBuilderSwift-bridging-header.h"; sourceTree = "<group>"; };
+		654A74D11A77E8D300F0E6D2 /* OAuthRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthRequestBuilder.swift; sourceTree = "<group>"; };
+		654A74D31A77E8E600F0E6D2 /* Semantics3Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semantics3Router.swift; sourceTree = "<group>"; };
 		65BE1D8B1A77D80500348E09 /* OAuthRequestBuilderSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OAuthRequestBuilderSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BE1DA01A77D80500348E09 /* OAuthRequestBuilderSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OAuthRequestBuilderSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BE1DA51A77D80500348E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,15 +119,23 @@
 			path = extension;
 			sourceTree = "<group>";
 		};
-		65BE1D821A77D80500348E09 = {
+		654A74D01A77E86A00F0E6D2 /* submodules */ = {
 			isa = PBXGroup;
 			children = (
 				6541D2501A77E48400841C46 /* OAuthSwift */,
+			);
+			name = submodules;
+			sourceTree = "<group>";
+		};
+		65BE1D821A77D80500348E09 = {
+			isa = PBXGroup;
+			children = (
 				65BE1DB01A77D93A00348E09 /* OAuthDemoSemantics3 */,
 				65BE1D8D1A77D80500348E09 /* OAuthRequestBuilderSwift */,
 				65BE1DA31A77D80500348E09 /* OAuthRequestBuilderSwiftTests */,
 				65BE1D8C1A77D80500348E09 /* Products */,
 				AE655EED1344C257F15FA906 /* Pods */,
+				654A74D01A77E86A00F0E6D2 /* submodules */,
 				94F0647D8BFBB3BE90465B50 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +152,7 @@
 		65BE1D8D1A77D80500348E09 /* OAuthRequestBuilderSwift */ = {
 			isa = PBXGroup;
 			children = (
+				654A74D11A77E8D300F0E6D2 /* OAuthRequestBuilder.swift */,
 			);
 			path = OAuthRequestBuilderSwift;
 			sourceTree = "<group>";
@@ -164,6 +177,7 @@
 		65BE1DB01A77D93A00348E09 /* OAuthDemoSemantics3 */ = {
 			isa = PBXGroup;
 			children = (
+				654A74D31A77E8E600F0E6D2 /* Semantics3Router.swift */,
 				65BE1DB11A77D93A00348E09 /* AppDelegate.swift */,
 				65BE1DB21A77D93A00348E09 /* LaunchScreen.xib */,
 				65BE1DB41A77D93A00348E09 /* Main.storyboard */,
@@ -356,8 +370,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6541D2601A77E48400841C46 /* HMACSHA1Signature.m in Sources */,
+				654A74D21A77E8D300F0E6D2 /* OAuthRequestBuilder.swift in Sources */,
 				6541D25F1A77E48400841C46 /* String+OAuthSwift.swift in Sources */,
 				6541D2631A77E48400841C46 /* OAuthSwiftClient.swift in Sources */,
+				654A74D41A77E8E600F0E6D2 /* Semantics3Router.swift in Sources */,
 				6541D2651A77E48400841C46 /* OAuthSwiftHTTPRequest.swift in Sources */,
 				65BE1DBE1A77D93A00348E09 /* ViewController.swift in Sources */,
 				65BE1DB91A77D93A00348E09 /* AppDelegate.swift in Sources */,
