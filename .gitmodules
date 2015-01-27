@@ -1,0 +1,3 @@
+[submodule "submodules/OAuthSwift"]
+	path = submodules/OAuthSwift
+	url = https://github.com/dongri/OAuthSwift
