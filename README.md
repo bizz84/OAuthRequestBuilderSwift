@@ -14,6 +14,53 @@ Here we extend the work already done in [OAuthSwift](https://github.com/dongri/O
 
 We use the [Semantics3](https://www.semantics3.com/) e-commerce search API as the reference API for this project.
 
+Usage
+==
+
+The Semantics3 APIs are accessible through the following Testing and Production endpoints:
+* https://api.semantics3.com/test/v1/
+* https://api.semantics3.com/v1/
+
+The demo code includes support for product search queries such as this:
+
+https://api.semantics3.com/v1/products?q={"search":"iphone"}
+
+By using the [Semantics3Router enum](https://github.com/bizz84/OAuthRequestBuilderSwift/blob/master/OAuthDemoSemantics3/Semantics3Router.swift) we can make the request above with the following call:
+
+```swift
+let request = Alamofire.request(Semantics3Router.Products(query: "{\"search\":\"\(query)\"}"))
+        
+request.responseSwiftyJSON { (request: NSURLRequest, response: NSHTTPURLResponse?, json: JSON, error : NSError?) -> Void in
+            
+    println("\(json)")
+}
+```
+
+Implementation
+==
+
+Under the hood, we can use OAuthSwiftClient to build the authorization header string for our URL request like so:
+```swift
+// 1. Build authorization header string
+let auth = OAuthSwiftClient.authorizationHeaderForMethod(method.rawValue,
+    url: URLWithPath,
+    parameters: parameters!,
+    credential: Semantics3Router.oauthClient.credential)
+```
+then pass this to the [OAuthRequestBuilder](https://github.com/bizz84/OAuthRequestBuilderSwift/blob/master/OAuthRequestBuilderSwift/OAuthRequestBuilder.swift) class:
+
+```swift
+// 2. Make URL request
+let URLRequest = OAuthRequestBuilder.makeRequest(URLWithPath,
+    method: method.rawValue,
+    headers: [ "Authorization" : auth ],
+    parameters: parameters!,
+    dataEncoding: dataEncoding)
+```
+
+Docs
+-------------------------------------------------------
+The full Semantics3 API documentation can be found [here](http://docs.semantics3.com/v1.0/docs/about-the-api).
 
 License
 -------------------------------------------------------
