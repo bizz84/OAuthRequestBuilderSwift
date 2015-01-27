@@ -15,7 +15,7 @@ Here we extend the work already done in [OAuthSwift](https://github.com/dongri/O
 We use the [Semantics3](https://www.semantics3.com/) e-commerce search API as the reference API for this project.
 
 Usage
-==
+-------------------------------------------------------
 
 The Semantics3 APIs are accessible through the following Testing and Production endpoints:
 * https://api.semantics3.com/test/v1/
@@ -37,7 +37,7 @@ request.responseSwiftyJSON { (request: NSURLRequest, response: NSHTTPURLResponse
 ```
 
 Implementation
-==
+-------------------------------------------------------
 
 Under the hood, we can use OAuthSwiftClient to build the authorization header string for our URL request like so:
 ```swift
@@ -61,6 +61,13 @@ let URLRequest = OAuthRequestBuilder.makeRequest(URLWithPath,
 Docs
 -------------------------------------------------------
 The full Semantics3 API documentation can be found [here](http://docs.semantics3.com/v1.0/docs/about-the-api).
+
+Dependencies
+-------------------------------------------------------
+* [Alamofire](https://github.com/Alamofire/Alamofire) Elegant HTTP Networking in Swift
+* [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) The better way to deal with JSON data in Swift
+* [Alamofire-SwiftyJSON](https://github.com/SwiftyJSON/Alamofire-SwiftyJSON) This is a convenience wrapper to parse JSON with SwiftyJSON from a server response, suggested [here](https://github.com/Alamofire/Alamofire/issues/57)
+* [OAuthSwift](https://github.com/dongri/OAuthSwift) Swift based OAuth library for iOS
 
 License
 -------------------------------------------------------
