@@ -69,6 +69,10 @@ Dependencies
 * [Alamofire-SwiftyJSON](https://github.com/SwiftyJSON/Alamofire-SwiftyJSON) This is a convenience wrapper to parse JSON with SwiftyJSON from a server response, suggested [here](https://github.com/Alamofire/Alamofire/issues/57)
 * [OAuthSwift](https://github.com/dongri/OAuthSwift) Swift based OAuth library for iOS
 
+Notes
+-------------------------------------------------------
+At the time of writing, the OAuthSwift library could not be compiled as a cocoapod due to [this issue](https://github.com/dongri/OAuthSwift/issues/20). This project uses an older version of OAuthSwift that does not require CommonCrypto.
+
 License
 -------------------------------------------------------
 Copyright (c) 2015 Andrea Bizzotto bizz84@gmail.com
