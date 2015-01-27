@@ -23,10 +23,7 @@ class SearchViewController: UIViewController {
     
     @IBOutlet var searchBar : UISearchBar!
     @IBOutlet var textView : UITextView!
-}
 
-extension SearchViewController: UISearchBarDelegate, UITextViewDelegate {
-    
     func doSearch(searchBar: UISearchBar) {
         
         let query = searchBar.text
@@ -39,6 +36,10 @@ extension SearchViewController: UISearchBarDelegate, UITextViewDelegate {
             self.textView.text = "\(json)"
         }
     }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
         doSearch(searchBar)
