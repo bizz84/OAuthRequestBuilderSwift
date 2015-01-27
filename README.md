@@ -73,6 +73,9 @@ Notes
 -------------------------------------------------------
 At the time of writing, the OAuthSwift library could not be compiled as a cocoapod due to [this issue](https://github.com/dongri/OAuthSwift/issues/20). This project uses an older version of OAuthSwift that does not require CommonCrypto.
 
+In order to use the Semantics3 API when running the project, it is necessary to sign up for a (free) account and obtain the required customer keys:
+https://www-dashboard.semantics3.com/signup
+
 License
 -------------------------------------------------------
 Copyright (c) 2015 Andrea Bizzotto bizz84@gmail.com
